@@ -4,7 +4,7 @@
 
 **A powerful local AI workspace built with Tauri, React, and Rust**
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![License: Unlicense](https://img.shields.io/badge/License-Unlicense-blue.svg)](LICENSE)
 [![Tauri](https://img.shields.io/badge/Tauri-2.0-blue)](https://tauri.app/)
 [![React](https://img.shields.io/badge/React-18-61DAFB)](https://reactjs.org/)
 [![Rust](https://img.shields.io/badge/Rust-1.70+-orange)](https://www.rust-lang.org/)
@@ -34,7 +34,23 @@ Run AI models, generate speech, and chat with AI—all locally on your machine. 
 - **Auto-stop**: TTS stops automatically when switching chats
 
 ### 🤖 AI Model Management
-- **Multi-source Support**: Browse models from Hugging Face, Civitai, GitHub, GitLab, and more
+- **16+ Model Sources**: Browse and download from:
+  - **Hugging Face** - Largest open-source ML model hub
+  - **Civitai** - Community-driven AI art models
+  - **GitHub** - Code repositories with model releases
+  - **GitLab** - Alternative Git hosting with models
+  - **OpenAI** - Official OpenAI model access
+  - **ModelScope** - Chinese AI model platform
+  - **KoboldAI** - Text generation model repository
+  - **Papers with Code** - Research paper implementations
+  - **Zenodo** - Scientific research repository
+  - **arXiv** - Academic preprint models
+  - **LM Studio** - Local language model hub
+  - **Ollama** - Optimized local LLM runner
+  - **NVIDIA NGC** - NVIDIA GPU-optimized models
+  - **AWS** - Amazon cloud AI models
+  - **Azure** - Microsoft cloud AI models
+  - **GCP** - Google Cloud AI models
 - **Easy Downloads**: One-click model downloads with progress tracking
 - **Smart Execution**: Automatic GPU/CPU detection and optimization
 - **Memory Management**: Built-in cleanup to free RAM and VRAM
@@ -207,12 +223,12 @@ npm run tauri:build
 - [x] Model management and downloads
 - [x] Memory optimization and cleanup
 - [x] Search engine integration
-- [ ] Image generation (Stable Diffusion)
-- [ ] Video generation
+- [X] Image generation (Stable Diffusion)
+- [X] Video generation
 - [ ] 3D model generation
 - [ ] Code-specific AI models
 - [ ] Multimodal vision-language models
-- [ ] Agent mode expansion
+- [/] Agent mode expansion
 - [ ] Plugin system
 
 ---
@@ -231,7 +247,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is released into the public domain under [The Unlicense](LICENSE). You are free to use, modify, and distribute this software without any restrictions.
 
 ---
 
