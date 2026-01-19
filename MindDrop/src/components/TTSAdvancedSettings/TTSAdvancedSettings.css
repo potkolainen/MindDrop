@@ -1,0 +1,316 @@
+.tts-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  backdrop-filter: blur(4px);
+}
+
+.tts-modal-content {
+  background: var(--bg-secondary, #1e1e1e);
+  border-radius: 12px;
+  width: 90%;
+  max-width: 700px;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--border-color, #333);
+}
+
+.tts-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border-color, #333);
+}
+
+.tts-modal-header h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: var(--text-primary, #ffffff);
+}
+
+.close-button {
+  background: none;
+  border: none;
+  color: var(--text-secondary, #999);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.close-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary, #ffffff);
+}
+
+.tts-modal-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+}
+
+.tts-section {
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-color, #333);
+}
+
+.tts-section:last-child {
+  border-bottom: none;
+}
+
+.tts-section h3 {
+  margin: 0 0 16px 0;
+  font-size: 1.1rem;
+  color: var(--accent-color, #00a8ff);
+}
+
+.setting-row {
+  margin-bottom: 20px;
+}
+
+.setting-row label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  color: var(--text-secondary, #ccc);
+  font-weight: 500;
+}
+
+.setting-row input[type="range"] {
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--bg-tertiary, #2a2a2a);
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.setting-row input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent-color, #00a8ff);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.setting-row input[type="range"]::-webkit-slider-thumb:hover {
+  background: var(--accent-hover, #0088cc);
+  transform: scale(1.1);
+}
+
+.setting-row input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent-color, #00a8ff);
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+}
+
+.setting-row input[type="range"]::-moz-range-thumb:hover {
+  background: var(--accent-hover, #0088cc);
+  transform: scale(1.1);
+}
+
+.range-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--text-tertiary, #888);
+  margin-top: 4px;
+}
+
+.voice-select,
+.breath-select {
+  width: 100%;
+  padding: 10px 12px;
+  background: var(--bg-tertiary, #2a2a2a);
+  border: 1px solid var(--border-color, #444);
+  border-radius: 6px;
+  color: var(--text-primary, #ffffff);
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.voice-select:focus,
+.breath-select:focus {
+  outline: none;
+  border-color: var(--accent-color, #00a8ff);
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-row label {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  cursor: pointer;
+}
+
+.checkbox-row input[type="checkbox"] {
+  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.preset-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.preset-select {
+  width: 100%;
+  padding: 10px 12px;
+  background: var(--bg-tertiary, #2a2a2a);
+  border: 1px solid var(--border-color, #444);
+  border-radius: 6px;
+  color: var(--text-primary, #ffffff);
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.preset-select:focus {
+  outline: none;
+  border-color: var(--accent-color, #00a8ff);
+}
+
+.save-preset {
+  display: flex;
+  gap: 8px;
+}
+
+.preset-name-input {
+  flex: 1;
+  padding: 10px 12px;
+  background: var(--bg-tertiary, #2a2a2a);
+  border: 1px solid var(--border-color, #444);
+  border-radius: 6px;
+  color: var(--text-primary, #ffffff);
+  font-size: 0.95rem;
+}
+
+.preset-name-input:focus {
+  outline: none;
+  border-color: var(--accent-color, #00a8ff);
+}
+
+.save-preset-btn,
+.delete-preset-btn {
+  padding: 10px 16px;
+  background: var(--accent-color, #00a8ff);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 500;
+}
+
+.save-preset-btn:hover {
+  background: var(--accent-hover, #0088cc);
+}
+
+.delete-preset-btn {
+  background: #dc3545;
+  margin-top: 8px;
+}
+
+.delete-preset-btn:hover {
+  background: #c82333;
+}
+
+.tts-modal-footer {
+  display: flex;
+  gap: 12px;
+  padding: 20px 24px;
+  border-top: 1px solid var(--border-color, #333);
+}
+
+.cancel-btn,
+.save-btn {
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 500;
+  border: none;
+}
+
+.cancel-btn {
+  background: var(--bg-tertiary, #2a2a2a);
+  color: var(--text-secondary, #ccc);
+  border: 1px solid var(--border-color, #444);
+}
+
+.cancel-btn:hover {
+  background: var(--bg-quaternary, #333);
+}
+
+.save-btn {
+  background: var(--accent-color, #00a8ff);
+  color: white;
+}
+
+.save-btn:hover {
+  background: var(--accent-hover, #0088cc);
+}
+
+.secondary-btn {
+  background: transparent;
+  color: #c5c8ff;
+  border: 1px solid #646cff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.secondary-btn:hover {
+  background: rgba(100, 108, 255, 0.1);
+}
+/* Scrollbar styling */
+.tts-modal-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.tts-modal-body::-webkit-scrollbar-track {
+  background: var(--bg-tertiary, #2a2a2a);
+  border-radius: 4px;
+}
+
+.tts-modal-body::-webkit-scrollbar-thumb {
+  background: var(--border-color, #444);
+  border-radius: 4px;
+}
+
+.tts-modal-body::-webkit-scrollbar-thumb:hover {
+  background: var(--text-tertiary, #666);
+}
