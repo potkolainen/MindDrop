@@ -334,14 +334,6 @@ Contributions are welcome! Please feel free to submit pull requests or open issu
 
 ---
 
-## 📞 Support
-
-- **Issues**: [GitHub Issues](https://github.com/yourusername/minddrop/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/minddrop/discussions)
-- **Email**: your.email@example.com
-
----
-
 ## 🙏 Acknowledgments
 
 - **Tauri** - Lightweight desktop framework
@@ -356,7 +348,6 @@ Contributions are welcome! Please feel free to submit pull requests or open issu
 
 <div align="center">
 
-**Made with ❤️ by the MindDrop Team**
 
 [⭐ Star on GitHub](https://github.com/yourusername/minddrop) • [🐛 Report Bug](https://github.com/yourusername/minddrop/issues) • [💡 Request Feature](https://github.com/yourusername/minddrop/issues)
 
