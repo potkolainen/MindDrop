@@ -1,0 +1,10 @@
+{
+  "name": "Text Transformer",
+  "version": "1.0.0",
+  "author": "AI Workspace",
+  "description": "Example plugin that transforms text to uppercase, lowercase, or title case",
+  "type": "python",
+  "entry": "transform.py",
+  "inputs": ["text", "mode"],
+  "outputs": ["result", "length", "mode_used"]
+}
