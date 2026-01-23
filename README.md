@@ -2,7 +2,7 @@
 
 <div align="center">
 
-**A powerful local AI workspace built with Tauri, React, and Rust**
+**A flexible local AI workspace built with Tauri, React, and Rust**
 
 [![License: Unlicense](https://img.shields.io/badge/License-Unlicense-blue.svg)](LICENSE)
 [![Tauri](https://img.shields.io/badge/Tauri-2.2-blue)](https://tauri.app/)
@@ -29,15 +29,13 @@ Run AI models, generate speech, images, and chat with AI—all locally on your m
 - **Comprehensive documentation** - See [PLUGIN_DEVELOPMENT.md](PLUGIN_DEVELOPMENT.md)
 
 ### 🪟 Window Memory
-- **Position persistence** - Window remembers its location on screen
-- **Size persistence** - Window dimensions saved between sessions
-- **State restoration** - Maximized/fullscreen state preserved
-- **Smooth UX** - Opens exactly where you left it
+- **Position persistence** - BORKED
+- **Size persistence** - BORKED
 
 ### 🎨 UI Improvements
 - **Collapsible chat categories** - Text, Image, Video chats organized by type
 - **Collapsible settings** - Clean, organized settings interface
-- **Multi-engine search** - Query 3+ search engines simultaneously
+- **Multi-engine search** - Query 3+ search engines simultaneously (too many may result into model confusion)
 - **System stats in chat** - Real-time resource monitoring in sidebar
 - **Enhanced navigation** - Cleaner, more intuitive interface
 
@@ -45,10 +43,17 @@ Run AI models, generate speech, images, and chat with AI—all locally on your m
 - **Auto-play fix** - TTS only starts on new messages, not when opening chat
 - **All settings verified** - Every advanced setting is functional
 - **Better control** - Improved responsiveness and reliability
+- **effects** - some are BORKED
 
 ### 🖼️ Diffuser Backend Persistence
 - **Installation tracking** - System remembers installed backends
-- **No re-installs** - Backends stay marked as installed
+- **No re-installs** - Backends stay marked as installed'
+
+## Quantize
+- **fp16, 8-bit and 4-bit** - they should now actually work
+
+## Hybrid-mode
+- **GPU + CPU** - should work better now and has less issues when dividing load
 
 ---
 
@@ -81,7 +86,7 @@ Run AI models, generate speech, images, and chat with AI—all locally on your m
 - **System Stats**: Real-time resource monitoring in chat sidebar
 
 ### 🤖 AI Model Management
-- **16+ Model Sources**: Hugging Face, Civitai, GitHub, GitLab, OpenAI, ModelScope, KoboldAI, Papers with Code, Zenodo, arXiv, LM Studio, Ollama, NVIDIA NGC, AWS, Azure, GCP
+- **16+ Model Sources**: Hugging Face, Civitai, GitHub, GitLab, OpenAI, ModelScope, KoboldAI, Papers with Code, Zenodo, arXiv, LM Studio, Ollama, NVIDIA NGC, AWS, Azure, GCP (i noticed Ollama does not actually work. will fix into next update)
 - **Easy Downloads**: One-click model downloads with progress tracking
 - **Smart Execution**: Automatic GPU/CPU detection and optimization
 - **Memory Management**: Built-in cleanup to free RAM and VRAM
@@ -263,7 +268,7 @@ cd src-tauri && cargo test
 - **Storage**: 10GB free space
 
 ### Recommended for AI Models
-- **GPU**: NVIDIA GPU with 6GB+ VRAM (CUDA support)
+- **GPU**: NVIDIA GPU with 8GB+ VRAM (CUDA support)
 - **RAM**: 16GB+ for large language models
 - **Storage**: 50GB+ for model storage
 
@@ -291,25 +296,17 @@ cd src-tauri && cargo test
 
 ## 🗺️ Roadmap
 
-### v0.6.0 (Planned)
-- [ ] Remote control with password protection
-- [ ] Model parameter controls (temperature, top-p, top-k, etc.)
-- [ ] LoRA support for models
-- [ ] Batch image generation
-- [ ] Chat performance optimization
+### v0.6.0 Beta
+- all download sources should work
+- have working assistive search
+- have better plugin system (more flexible)
+- have better tweaking per AI model
+- fix Window memory
+- optimize image generation and add features
+- optimize video generation and add features
+- add feature that AImodels log information can can have "memory" (toggle off/on, per model/all models)
+- make sure "memory" is not security risk
 
-### v0.7.0 (Planned)
-- [ ] HTTP/REST plugin adapter
-- [ ] Plugin marketplace
-- [ ] Enhanced security sandboxing
-- [ ] Preset system for model configurations
-
-### Future
-- [ ] Model quantization UI (FP16, 8-bit, 4-bit)
-- [ ] Context length slider
-- [ ] Auto-trim old messages
-- [ ] WebSocket adapter for real-time plugins
-- [ ] Plugin composition (chaining)
 
 ---
 
@@ -349,6 +346,6 @@ Contributions are welcome! Please feel free to submit pull requests or open issu
 <div align="center">
 
 
-[⭐ Star on GitHub](https://github.com/yourusername/minddrop) • [🐛 Report Bug](https://github.com/yourusername/minddrop/issues) • [💡 Request Feature](https://github.com/yourusername/minddrop/issues)
+[⭐ Star on GitHub] • [🐛 Report Bug] • [💡 Request Feature]
 
 </div>
