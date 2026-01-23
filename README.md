@@ -1,59 +1,93 @@
-# MindDrop v0.5.0
+# MindDrop Alpha 0.5.0
 
 <div align="center">
-
 **A flexible local AI workspace built with Tauri, React, and Rust**
-
 [![License: Unlicense](https://img.shields.io/badge/License-Unlicense-blue.svg)](LICENSE)
 [![Tauri](https://img.shields.io/badge/Tauri-2.2-blue)](https://tauri.app/)
 [![React](https://img.shields.io/badge/React-18-61DAFB)](https://reactjs.org/)
 [![Rust](https://img.shields.io/badge/Rust-1.70+-orange)](https://www.rust-lang.org/)
 
-Run AI models, generate speech, images, and chat with AI—all locally on your machine. No cloud, no API keys required for core features.
-
-**Version 0.5.0 "Alpha Release"**
+MindDrop is a local-first, experimental AI hub designed for users who want flexibility, privacy, and control. It brings multiple AI capabilities (chat, search, image/video generation, TTS) into a single desktop app, with a strong focus on extensibility via plugins.
+Status: Alpha 0.5.0
+This release focuses on fixing core systems and stabilizing existing features. Expect rough edges.
 
 </div>
 
 ---
 
-## 🆕 What's New in v0.5.0
+### ✨ What MindDrop Is
+- **Local-first AI hub** (no mandatory cloud APIs)
+- **Supports multiple AI workflows in one app**
+- **Plugin-based and hackable by design**
+- **Built for experimentation, not mass-market polish**
+---
+### **Fixes and changes to 0.5.0 from before**
 
-### 🔌 Plugin System
-- **Adapter-based architecture** - Use existing CLI tools without modification
-- **Multi-language support** - Python, Node.js, and binary executables
-- **Auto-discovery** - Automatically scans `Plugins/` folder
-- **Enable/disable toggles** - Manage plugins individually
-- **JSON communication** - Simple stdin/stdout protocol
-- **Example plugin included** - Text transformer demonstrating the system
-- **Comprehensive documentation** - See [PLUGIN_DEVELOPMENT.md](PLUGIN_DEVELOPMENT.md)
+### Core & UI
+* Working quantization (future versions will expose true native precision)
+* System stats visible in both menu and chat panels
+* Improved chat panel:
+  * Collapsible chat-type buttons (text, image, video, etc.)
+  * Active chat indicators
+  * Scroll support
 
-### 🪟 Window Memory
-- **Position persistence** - BORKED
-- **Size persistence** - BORKED
+### Text-to-Speech (TTS)
+* Fixed overlapping voices
+* TTS no longer auto-plays when opening chats
+* Speech triggers only on new incoming messages.
 
-### 🎨 UI Improvements
-- **Collapsible chat categories** - Text, Image, Video chats organized by type
-- **Collapsible settings** - Clean, organized settings interface
-- **Multi-engine search** - Query 3+ search engines simultaneously (too many may result into model confusion)
-- **System stats in chat** - Real-time resource monitoring in sidebar
-- **Enhanced navigation** - Cleaner, more intuitive interface
-
-### 🎙️ TTS Enhancements
-- **Auto-play fix** - TTS only starts on new messages, not when opening chat
-- **All settings verified** - Every advanced setting is functional
-- **Better control** - Improved responsiveness and reliability
-- **effects** - some are BORKED
-
-### 🖼️ Diffuser Backend Persistence
-- **Installation tracking** - System remembers installed backends
-- **No re-installs** - Backends stay marked as installed'
-
-## Quantize
-- **fp16, 8-bit and 4-bit** - they should now actually work
+ ## Quantize
+* **fp16, 8-bit and 4-bit** - they should now actually work
 
 ## Hybrid-mode
-- **GPU + CPU** - should work better now and has less issues when dividing load
+* **GPU + CPU** - should work better now and has less issues when dividing load
+* 
+### Search
+* Online search fixed
+* Default search engine selectable
+* Multi-engine search mode (query multiple engines in parallel)
+* Results grouped and labeled by engine
+
+### Diffusers
+* Installed diffusers state is now correctly remembered
+
+### Plugins (Early / Alpha)
+* Adapter-based plugin system
+* Plugins run out-of-process
+* JSON-based communication
+* Plugins are discovered from:
+
+  ```
+  src-tauri/Plugins/
+  ```
+* Enable / disable plugins via UI
+* Example plugin included
+
+---
+
+## ⚠️ Known Issues (Alpha)
+
+* Assistive search is partially broken:
+  * CAPTCHA handling (Qwant)
+  * Summarize page / send-to-chat buttons
+  * Popup close button
+* Window size / position memory not working reliably
+* Some filters and effects may have little or no effect
+
+---
+
+## 🧭 Roadmap / Future Plans (0.6.0+)
+
+* Fix assistive search completely
+* Window state persistence
+* Expanded model controls (temperature, top-p, presets, LoRA)
+* Improved plugin adapters (HTTP / WebSocket)
+* Image & video generation improvements
+* Conversation memory & file export/import
+
+---
+
+> MindDrop prioritizes flexibility and local control over polish. Stability will improve over time.
 
 ---
 
@@ -71,7 +105,6 @@ Run AI models, generate speech, images, and chat with AI—all locally on your m
 - **8 Voice Profiles**: Male (neutral, deep, soft), Female (neutral, warm, bright), Androgynous, Narrator
 - **Advanced Controls**: Speed, pitch, prosody, stability, volume, pause timing, breath insertion
 - **Audio Post-Processing**: Warmth, presence, air, reverb, de-esser, normalization, limiter
-- **10+ Built-in Presets**: Natural Conversation, Podcast Narrator, Warm Audiobook, Cold AI Voice, Fast Utility, and more
 - **Custom Presets**: Create and save your own voice configurations
 - **Auto-play**: Optional automatic playback of AI responses (only on new messages)
 
@@ -80,14 +113,14 @@ Run AI models, generate speech, images, and chat with AI—all locally on your m
 - **Collapsible Categories**: Organize chats with expandable sections showing counts
 - **Model Selection**: Choose from downloaded AI models
 - **Multi-Engine Search**: Query DuckDuckGo, Brave, and Bing simultaneously
-- **13 Search Engines**: DuckDuckGo, Google, Brave, Bing, GitHub, Stack Overflow, Reddit, and more
+- **13 Search Engines**: DuckDuckGo, Google, Brave, Bing, GitHub, Stack Overflow, and more
 - **Message Playback**: Click-to-play TTS for any message
 - **Auto-stop**: TTS stops automatically when switching chats
 - **System Stats**: Real-time resource monitoring in chat sidebar
 
 ### 🤖 AI Model Management
 - **16+ Model Sources**: Hugging Face, Civitai, GitHub, GitLab, OpenAI, ModelScope, KoboldAI, Papers with Code, Zenodo, arXiv, LM Studio, Ollama, NVIDIA NGC, AWS, Azure, GCP (i noticed Ollama does not actually work. will fix into next update)
-- **Easy Downloads**: One-click model downloads with progress tracking
+- **Easy Downloads**: One-click model downloads with progress tracking (files are big and sometimes it looks like download is stuck. it is not)
 - **Smart Execution**: Automatic GPU/CPU detection and optimization
 - **Memory Management**: Built-in cleanup to free RAM and VRAM
 
@@ -99,7 +132,7 @@ Run AI models, generate speech, images, and chat with AI—all locally on your m
 - **Custom Parameters**: Control steps, guidance, seed, size
 
 ### 🖥️ System Optimization
-- **Window Memory**: Position, size, and state persistence
+- **Window Memory**: Position, size, and state persistence (BORKED)
 - **Resource Monitoring**: Real-time CPU, RAM, and VRAM usage tracking
 - **Memory Cleanup**: Automatic model unloading when switching chats
 - **Manual Controls**: Force memory cleanup from Settings
@@ -294,22 +327,6 @@ cd src-tauri && cargo test
 
 ---
 
-## 🗺️ Roadmap
-
-### v0.6.0 Beta
-- all download sources should work
-- have working assistive search
-- have better plugin system (more flexible)
-- have better tweaking per AI model
-- fix Window memory
-- optimize image generation and add features
-- optimize video generation and add features
-- add feature that AImodels log information can can have "memory" (toggle off/on, per model/all models)
-- make sure "memory" is not security risk
-
-
----
-
 ## 📄 License
 
 This project is released into the **public domain** under the [Unlicense](LICENSE).
@@ -328,6 +345,7 @@ Contributions are welcome! Please feel free to submit pull requests or open issu
 - UI/UX improvements
 - Documentation
 - Bug fixes and optimizations
+- Discord https://discord.gg/DWuAh9CGMr
 
 ---
 
@@ -340,6 +358,7 @@ Contributions are welcome! Please feel free to submit pull requests or open issu
 - **Stable Diffusion** - Image generation models
 - **Rust Community** - Amazing language and ecosystem
 - **React** - Frontend framework
+- **vibe code involved**
 
 ---
 
