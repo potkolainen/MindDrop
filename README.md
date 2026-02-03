@@ -331,7 +331,7 @@ cd src-tauri && cargo test
 
 This project is released into the **public domain** under the [Unlicense](LICENSE).
 
-You are free to use, modify, distribute, and sell this software without any restrictions.
+You are free to use, modify, distribute this software without any restrictions.
 
 ---
 
@@ -345,7 +345,7 @@ Contributions are welcome! Please feel free to submit pull requests or open issu
 - UI/UX improvements
 - Documentation
 - Bug fixes and optimizations
-- Discord https://discord.gg/DWuAh9CGMr
+- Reddit https://www.reddit.com/r/MindDrop/s/ApG5GhabIO
 
 ---
 
